@@ -1,6 +1,6 @@
 <#
 **********************************************************************************                                                                          
-*  This script is used for downlowding free ebooks from bestseller.md.           *
+*  This script is used for downlowding free ebooks from bestseller.md            *
 *  Author: Marius Martin                                                         *
 *  version: 20191203                                                             *
 *  License: GNU GPL                                                              *   
