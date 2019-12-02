@@ -15,7 +15,7 @@ $booksdir = "$scriptPath\books"
 
 if (!(Test-Path $booksdir -PathType Container)){
            New-Item -ItemType Directory -Path $booksdir
-         }
+}
 
 Set-Location -Path $booksdir
 
@@ -40,7 +40,6 @@ for ($i=$minlinks; $i -le $maxlinks; $i++){
         Clear-Variable filename
         Write-Host 'There is no valid file at the specified URL' -ForegroundColor Magenta
         Write-Output $url  | Out-File "$scriptPath\invalid_links.txt" -Append
-
     }
     elseif (Test-Path($filename))
     {
