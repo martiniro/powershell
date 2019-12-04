@@ -1,0 +1,3 @@
+- This script is used for downlowding free ebooks from bestseller.md - https://www.bestseller.md/ebooks/carti-gratis.html
+- The links have a pattern - https://www.bestseller.md/freedownload/download/link/link_id/xyz/ - where 1 < xyz < 5000
+- Because the links does not specify the absolute URL to the file, the **file name is extracted from the headers**. Nice!
