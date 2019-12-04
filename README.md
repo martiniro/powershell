@@ -1,2 +1,2 @@
-# powershell
-# Here will be personal projects as a hobby.
+# PowerShell home scripts
+## Here will be personal projects as a hobby
