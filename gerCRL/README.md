@@ -1,3 +1,4 @@
 - This script is used for downloading CRL files. Or any files :-)
+- The script provides no validation of the CRL files. That's another story.
 - The URLs of the CRL files are specified in the crl.urls (txt file) (1 URL per line)
 - The script and crl.urls file are in the same folder
