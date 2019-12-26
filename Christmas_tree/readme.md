@@ -5,10 +5,4 @@
       oooooooooo
      oooooooooooo
     oooooooooooooo
-   oooooooooooooooo
-  oooooooooooooooooo
- oooooooooooooooooooo
-oooooooooooooooooooooo
-          ||
-          ||
-          ||
+    christmas tree
