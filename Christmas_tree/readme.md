@@ -1,0 +1,14 @@
+          oo
+         oooo
+        oooooo
+       oooooooo
+      oooooooooo
+     oooooooooooo
+    oooooooooooooo
+   oooooooooooooooo
+  oooooooooooooooooo
+ oooooooooooooooooooo
+oooooooooooooooooooooo
+          ||
+          ||
+          ||
