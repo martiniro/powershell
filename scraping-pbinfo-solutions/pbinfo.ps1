@@ -15,7 +15,7 @@ $scriptPath = Split-Path $script:MyInvocation.MyCommand.Path
 $soldir = "$scriptPath\solutions"
 if (!(Test-Path $soldir -PathType Container)){       # check if solutions folder exists and if not, it is created        
            New-Item -ItemType Directory -Path $soldir -Force | Out-Null
-    }
+}
 
 $baseurl = 'https://tutoriale-pe.net/rezolvari-pbinfo/page/'
 $minpg = 1           # https://tutoriale-pe.net/rezolvari-pbinfo/page/1          
