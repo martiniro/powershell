@@ -22,7 +22,7 @@ $minpg = 1           # https://tutoriale-pe.net/rezolvari-pbinfo/page/1
 $maxpg = 225         # https://tutoriale-pe.net/rezolvari-pbinfo/page/225   
 
 for ($i=$minpg; $i -le $maxpg; $i++){                # loop for getting the links of solutions
-    $url = $baseurl+$i+"/"
+    $url = $baseurl+$i
     $webr = iwr -URI $url -ErrorAction Ignore
     $links = $webr.Links | where href -like "*problema*" | Select-Object href -ExpandProperty href | sort-object href -Unique | Format-List href
     Write-Progress -Activity "Retrieving solutions links..." -Status "$([math]::ceiling($i/$maxpg*100))% Complete" -PercentComplete $($i/$maxpg*100)
