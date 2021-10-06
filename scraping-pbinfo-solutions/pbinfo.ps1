@@ -25,7 +25,7 @@ for ($i=$minpg; $i -le $maxpg; $i++){                # loop for getting the link
     $url = $baseurl+$i+"/"
     $webr = iwr -URI $url -ErrorAction Ignore
     $links = $webr.Links | where href -like "*problema*" | Select-Object href -ExpandProperty href | sort-object href -Unique | Format-List href
-    Write-Progress -Activity "Retrieving solutions links..." -Status "$([math]::ceiling($i/$maxpg*100))% Complete" -PercentComplete $([math]::ceiling($i/$maxpg*100))
+    Write-Progress -Activity "Retrieving solutions links..." -Status "$([math]::ceiling($i/$maxpg*100))% Complete" -PercentComplete $($i/$maxpg*100)
     Write-Output $links  | Out-File "$scriptPath\sol_links.txt" -Append
 }
 $list = Get-Content $scriptPath/sol_links.txt -ErrorAction SilentlyContinue
