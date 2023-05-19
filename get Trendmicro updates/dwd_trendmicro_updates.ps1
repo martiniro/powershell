@@ -8,7 +8,7 @@ $scriptPath = Split-Path $script:MyInvocation.MyCommand.Path       # define the 
 $today = (Get-Date).ToString('yyyyMMdd')                           # today date
 $downloadDirectory = $scriptPath+"\"+$today+"_updates"             # define the folder where updates are downloaded. Name is current-date_updates
 
-# if the download directory does not exists it is created
+# if the download directory does not exist it is created
 if (!(Test-Path $downloadDirectory -PathType Container)){
            New-Item -ItemType Directory -Path $downloadDirectory
     }
