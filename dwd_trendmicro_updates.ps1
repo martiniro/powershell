@@ -17,7 +17,7 @@ if (!(Test-Path $downloadDirectory -PathType Container)){
 $iniurl = "http://smid56-p.activeupdate.trendmicro.com/activeupdate/server.ini"
 $content = Invoke-WebRequest -Uri $iniurl -UseBasicParsing | Select-Object -ExpandProperty Content
 
-# extracting the interest values from INI file
+# extracting the values of interest from INI file
 $httpsValue = [regex]::Match($content, "(?<=Https=).*").Value.Trim()
 $pathVSAPIValue = [regex]::Match($content, "(?<=Path_VSAPI=).*?(?=,)").Value.Trim()
 $antispam1 = [regex]::Match($content, "(?<=P.10001=).*?(?=,)").Value.Trim()
