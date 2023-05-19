@@ -11,7 +11,7 @@ $downloadDirectory = $scriptPath+"\"+$today+"_updates"             # define the 
 # if the download directory does not exist it is created
 if (!(Test-Path $downloadDirectory -PathType Container)){
            New-Item -ItemType Directory -Path $downloadDirectory
-    }
+}
 
 # parsing the content of INI file
 $iniurl = "http://smid56-p.activeupdate.trendmicro.com/activeupdate/server.ini"
