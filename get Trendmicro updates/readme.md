@@ -1,2 +1,3 @@
 - Script for downloding updates for Trendmicro AV
 - The URLs for updates to be downloaded are build from values provided in INI file  
+- The script is meant for dowmloading updates from the Internet and transfer them in closed/restricted zone
