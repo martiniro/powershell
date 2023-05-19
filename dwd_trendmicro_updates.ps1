@@ -1,4 +1,4 @@
-﻿<#
+﻿<# 
      *** Script for downloding updates for Trendmicro AV ***
      *** Version: 2023.05.19 *** 
      *** Marius Martin *** License GNU GPL***   
