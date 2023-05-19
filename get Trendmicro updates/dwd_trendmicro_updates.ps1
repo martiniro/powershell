@@ -1,7 +1,8 @@
 ﻿<#
      *** Script for downloding updates for Trendmicro AV ***
      *** Version: 2023.05.19 *** 
-     *** Marius Martin *** License GNU GPL***   
+     *** Marius Martin *** 
+     *** License GNU GPL***   
 #>
 
 $scriptPath = Split-Path $script:MyInvocation.MyCommand.Path       # define the path where the script runs
@@ -28,12 +29,17 @@ $vsapizipurl = "$httpsValue/$pathVSAPIValue"
 $vasapisigurl = $vsapizipurl.Replace('zip','sig')
 $antispam1url = "$httpsValue/$antispam1"
 $antispam2url = "$httpsValue/$antispam2"
+$antispam1sigurl = $antispam1url.Replace('zip','sig')
+$antispam2sigurl = $antispam2url.Replace('zip','sig')
 
 # download the files
-$my_urls = @($vsapizipurl, $vasapisigurl, $antispam1url, $antispam2url, $iniurl)
+$my_urls = @($vsapizipurl, $vasapisigurl, $antispam1url, $antispam1sigurl, $antispam2url, $antispam2sigurl, $iniurl)
+$counter = 0
 foreach ($url in $my_urls) {
     $fileName = [System.IO.Path]::GetFileName($url)
     $destinationPath = Join-Path -Path $downloadDirectory -ChildPath $fileName
     Invoke-WebRequest -Uri $url -OutFile $destinationPath 
+    Write-Progress -Activity "Downloading files..." -CurrentOperation $title  -PercentComplete (($counter/$my_urls.count)*100)
+    Start-Sleep -Milliseconds 500
     Write-Host "Downloaded file: $fileName"
 }
