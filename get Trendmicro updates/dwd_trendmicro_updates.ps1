@@ -2,7 +2,7 @@
      *** Script for downloding updates for Trendmicro AV ***
      *** Version: 2023.05.19 *** 
      *** Marius Martin *** 
-     *** License GNU GPL***   
+     *** License GNU GPL ***   
 #>
 
 $scriptPath = Split-Path $script:MyInvocation.MyCommand.Path       # define the path where the script runs
