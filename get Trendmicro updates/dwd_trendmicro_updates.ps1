@@ -39,7 +39,7 @@ foreach ($url in $my_urls) {
     $fileName = [System.IO.Path]::GetFileName($url)
     $destinationPath = Join-Path -Path $downloadDirectory -ChildPath $fileName
     Invoke-WebRequest -Uri $url -OutFile $destinationPath 
-    Write-Progress -Activity "Downloading files..." -CurrentOperation $title  -PercentComplete (($counter/$my_urls.count)*100)
+    Write-Progress -Activity "Downloading files..." -CurrentOperation $fileName -PercentComplete (($counter/$my_urls.count)*100)
     Start-Sleep -Milliseconds 500
     Write-Host "Downloaded file: $fileName"
 }
