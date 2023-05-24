@@ -11,7 +11,7 @@ $downloadDirectory = $scriptPath+"\"+$today+"_updates"             # define the 
 
 # if the download directory does not exist it is created
 if (!(Test-Path $downloadDirectory -PathType Container)){
-           New-Item -ItemType Directory -Path $downloadDirectory
+    New-Item -ItemType Directory -Path $downloadDirectory
 }
 
 # parsing the content of INI file
@@ -38,8 +38,15 @@ $counter = 0
 foreach ($url in $my_urls) {
     $fileName = [System.IO.Path]::GetFileName($url)
     $destinationPath = Join-Path -Path $downloadDirectory -ChildPath $fileName
+    if (Test-Path($destinationPath))
+    {
+       Write-Host "Skipping file $fileName, is already downloaded" -ForegroundColor Magenta
+    }
+    else
+    {
     Invoke-WebRequest -Uri $url -OutFile $destinationPath 
     Write-Progress -Activity "Downloading files..." -CurrentOperation $fileName -PercentComplete (($counter/$my_urls.count)*100)
     Start-Sleep -Milliseconds 500
     Write-Host "Downloaded file: $fileName"
+    }
 }
