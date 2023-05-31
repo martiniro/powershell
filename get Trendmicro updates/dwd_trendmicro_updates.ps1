@@ -36,6 +36,7 @@ $antispam2sigurl = $antispam2url.Replace('zip','sig')
 $my_urls = @($vsapizipurl, $vasapisigurl, $antispam1url, $antispam1sigurl, $antispam2url, $antispam2sigurl, $iniurl)
 $counter = 0
 foreach ($url in $my_urls) {
+    $counter++
     $fileName = [System.IO.Path]::GetFileName($url)
     $destinationPath = Join-Path -Path $downloadDirectory -ChildPath $fileName
     if (Test-Path($destinationPath))
