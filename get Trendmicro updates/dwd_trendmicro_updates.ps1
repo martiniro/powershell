@@ -47,7 +47,7 @@ foreach ($url in $my_urls) {
     {
     Invoke-WebRequest -Uri $url -OutFile $destinationPath 
     Write-Progress -Activity "Downloading files..." -CurrentOperation $fileName -PercentComplete (($counter/$my_urls.count)*100)
-    Start-Sleep -Milliseconds 500
+    Start-Sleep -Milliseconds 200
     Write-Host "Downloaded file: $fileName"
     }
 }
